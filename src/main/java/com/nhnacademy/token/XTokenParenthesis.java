@@ -1,12 +1,14 @@
 package com.nhnacademy.token;
 
-public class XTokenParenthesis implements XToken {
+public class XTokenParenthesis extends XTokenOperator {
+    private final String value;
     /**
      * 생성자.
      *
      * @param value 토큰의 문자열 값
      */
     public XTokenParenthesis(String value) {
+        this.value = value;
     }
 
     /**
@@ -16,7 +18,7 @@ public class XTokenParenthesis implements XToken {
      */
     @Override
     public String getValue() {
-        return "";
+        return value;
     }
 
     /**
@@ -26,7 +28,12 @@ public class XTokenParenthesis implements XToken {
      */
     @Override
     public int getPrecedence() {
-        throw new UnsupportedOperationException();
+        if(isCorrectOperator()) return 4;
+        throw new IllegalArgumentException();
     }
 
+    @Override
+    public boolean isCorrectOperator() {
+        return "(".equals(value) || ")".equals(value);
+    }
 }

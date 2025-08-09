@@ -1,7 +1,7 @@
 package com.nhnacademy.number;
 
 public class XInteger extends XRational {
-
+    private int value;
     public XInteger() {
     }
 
@@ -11,6 +11,7 @@ public class XInteger extends XRational {
      * @param value 정수값
      */
     public XInteger(int value) {
+        super(value);
     }
 
     /**
@@ -19,7 +20,7 @@ public class XInteger extends XRational {
      * @return 정수값
      */
     public int getValue() {
-        return 0;
+        return value;
     }
 
     @Override

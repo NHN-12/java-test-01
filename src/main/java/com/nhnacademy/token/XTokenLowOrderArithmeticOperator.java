@@ -1,12 +1,16 @@
 package com.nhnacademy.token;
 
 public class XTokenLowOrderArithmeticOperator extends XTokenOperator {
+    private final String value;
     /**
      * 생성자.
      *
      * @param value 토큰의 문자열 값
      */
     public XTokenLowOrderArithmeticOperator(String value) {
+        if(value == null) throw new IllegalArgumentException();
+        this.value = value;
+        if(!isCorrectOperator()) throw new IllegalArgumentException();
     }
 
     /**
@@ -16,7 +20,7 @@ public class XTokenLowOrderArithmeticOperator extends XTokenOperator {
      */
     @Override
     public String getValue() {
-        return "";
+        return value;
     }
 
     /**
@@ -26,7 +30,12 @@ public class XTokenLowOrderArithmeticOperator extends XTokenOperator {
      */
     @Override
     public int getPrecedence() {
-        throw new UnsupportedOperationException();
+        if(isCorrectOperator()) return 2;
+        throw new IllegalArgumentException();
     }
 
+    @Override
+    public boolean isCorrectOperator() {
+        return "+".equals(value) || "-".equals(value);
+    }
 }
