@@ -1,5 +1,5 @@
 package com.nhnacademy.token;
-
+//
 public interface XToken {
     /**
      * 토큰의 값을 반환합니다.

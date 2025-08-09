@@ -1,5 +1,5 @@
 package com.nhnacademy.number;
-
+//
 public interface XNumber extends Comparable<XNumber> {
     XNumber add(XNumber other);
 

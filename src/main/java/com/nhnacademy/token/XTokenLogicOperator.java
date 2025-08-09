@@ -1,5 +1,5 @@
 package com.nhnacademy.token;
-
+//
 public class XTokenLogicOperator extends XTokenOperator {
     private final String value;
     /**

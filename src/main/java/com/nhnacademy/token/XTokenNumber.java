@@ -1,7 +1,7 @@
 package com.nhnacademy.token;
 
 import java.util.regex.Pattern;
-
+//
 public class XTokenNumber implements XToken {
     private String value;
     /**

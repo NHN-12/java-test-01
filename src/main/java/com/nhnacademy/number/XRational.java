@@ -1,5 +1,5 @@
 package com.nhnacademy.number;
-
+//
 public class XRational implements XNumber {
     protected final long numerator;
     protected final long denominator;
